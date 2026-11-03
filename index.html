@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17191D">
+  <meta name="description" content="CodeQuiz.exe — The Developer Challenge. Test your programming knowledge.">
+  <title>CODEQUIZ.exe — The Developer Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-home><span class="brand-mark">&lt;/&gt;</span> CODEQUIZ<span class="brand-ext">.exe</span></a>
+    <nav aria-label="Main navigation">
+      <button class="nav-link active" data-home>Home</button>
+      <button class="nav-link" data-categories>Categories</button>
+      <button class="nav-link" data-leaderboard>Leaderboard</button>
+      <button class="nav-link" data-about>About</button>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <main>
+    <section id="homeScreen" class="screen active">
+      <div class="hero wrap">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse-dot"></span> THE DEVELOPER CHALLENGE <span class="eyebrow-line"></span> EST. 2026</div>
+          <h1>THINK.<br><span>CODE.</span><br>CONQUER<span class="period">.</span></h1>
+          <p class="hero-sub">Challenge your coding knowledge.<br>Level up your developer skills.</p>
+          <div class="hero-actions"><button class="btn btn-primary" data-start>Start Quiz <span>↗</span></button><button class="btn btn-quiet" data-categories>Explore categories <span>↓</span></button></div>
+          <div class="hero-note"><span class="keycap">⌘</span> A sharper mind is your best IDE.</div>
+        </div>
+        <div class="hero-art" aria-label="Abstract code terminal illustration">
+          <div class="terminal-window">
+            <div class="terminal-top"><div class="terminal-dots"><i></i><i></i><i></i></div><span>challenge_session.js</span><span class="terminal-live">● LIVE</span></div>
+            <div class="terminal-code"><div><span class="ln">01</span><span class="muted">const</span> <span class="white">developer</span> = {</div><div><span class="ln">02</span>&nbsp;&nbsp;mindset: <span class="silver">'curious'</span>,</div><div><span class="ln">03</span>&nbsp;&nbsp;skills: <span class="silver">'growing'</span>,</div><div><span class="ln">04</span>&nbsp;&nbsp;limits: <span class="silver">'undefined'</span></div><div><span class="ln">05</span>};</div><div class="code-gap"><span class="ln">06</span><span class="muted">while</span> (developer) {</div><div><span class="ln">07</span>&nbsp;&nbsp;<span class="white">learn</span>(); <span class="white">build</span>(); <span class="white">repeat</span>();</div><div><span class="ln">08</span>}</div><div class="terminal-cursor">▌</div></div>
+            <div class="terminal-footer"><span>BUILD: PASSING</span><span>●●●●●●●● 100%</span></div>
+          </div>
+          <div class="floating-tag tag-top"><span>01 / 07</span><b>DOMINATE THE STACK</b></div>
+          <div class="floating-tag tag-bottom"><span class="tag-icon">↗</span><div><b>YOUR NEXT LEVEL</b><small>IS ONE QUESTION AWAY</small></div></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        </div>
+      </div>
+      <div class="stats-strip wrap">
+        <div><strong id="statQuestions">210</strong><span>QUESTIONS</span></div><div><strong>07</strong><span>CATEGORIES</span></div><div><strong>03</strong><span>DIFFICULTY LEVELS</span></div><div><strong>∞</strong><span>WAYS TO IMPROVE</span></div>
+      </div>
+      <section class="featured wrap">
+        <div class="section-head"><div><div class="eyebrow">PICK YOUR BATTLEGROUND</div><h2>Explore the <span>stack.</span></h2></div><button class="text-link" data-categories>All categories ↗</button></div>
+        <div id="featuredGrid" class="category-grid"></div>
+      </section>
+      <section class="bottom-cta wrap"><div><div class="eyebrow">READY WHEN YOU ARE</div><h2>Make every answer<br> <span>count.</span></h2></div><button class="btn btn-primary" data-start>Start your challenge ↗</button></section>
+    </section>
+
+    <section id="categoryScreen" class="screen wrap">
+      <div class="page-heading"><div class="eyebrow">01 — SELECT YOUR DOMAIN</div><h1>Choose your <span>stack.</span></h1><p>Pick a category. Every great developer starts with curiosity.</p></div>
+      <div id="categoryGrid" class="category-grid category-grid-large"></div>
+      <div class="selection-foot"><span>07 DOMAINS AVAILABLE</span><span>SELECT ONE TO CONTINUE ↗</span></div>
+    </section>
+
+    <section id="difficultyScreen" class="screen wrap">
+      <button class="back-link" data-back-categories>← Back to categories</button>
+      <div class="page-heading"><div class="eyebrow">02 — SET YOUR PACE</div><h1>Choose your <span>difficulty.</span></h1><p id="difficultyIntro">Every level is a new opportunity to sharpen your edge.</p></div>
+      <div class="difficulty-grid">
+        <button class="difficulty-card" data-difficulty="Easy"><span class="level-index">01 / STARTER</span><span class="level-symbol">○</span><h2>Easy</h2><p>Build confidence with core concepts and fundamentals.</p><span class="level-bottom">10 QUESTIONS <b>↗</b></span></button>
+        <button class="difficulty-card featured-level" data-difficulty="Medium"><span class="level-index">02 / BUILDER</span><span class="level-symbol">◒</span><h2>Medium</h2><p>Put your practical knowledge and problem-solving to work.</p><span class="level-bottom">10 QUESTIONS <b>↗</b></span></button>
+        <button class="difficulty-card" data-difficulty="Hard"><span class="level-index">03 / EXPERT</span><span class="level-symbol">◉</span><h2>Hard</h2><p>Take on deeper concepts and nuanced technical decisions.</p><span class="level-bottom">10 QUESTIONS <b>↗</b></span></button>
+      </div>
+      <div class="selection-foot"><span>10 QUESTIONS PER CHALLENGE</span><span>20 SECONDS EACH</span></div>
+    </section>
+
+    <section id="quizScreen" class="screen wrap">
+      <div class="quiz-top"><button class="back-link" id="exitQuiz">← Exit challenge</button><div class="quiz-meta"><span id="quizCategory">HTML</span><span class="meta-divider">/</span><span id="quizDifficulty">EASY</span></div><div class="quiz-counter" id="quizCounter">01 <i>/</i> 10</div></div>
+      <div class="quiz-progress"><div id="progressFill"></div></div>
+      <div class="quiz-layout">
+        <div class="question-main">
+          <div class="question-label"><span>QUESTION <b id="questionNumber">01</b></span><span class="question-type">SINGLE CHOICE</span></div>
+          <h1 id="questionText">Question text goes here</h1>
+          <div id="answerList" class="answer-list"></div>
+          <div class="quiz-controls"><button class="btn btn-quiet" id="prevQuestion">← Previous</button><button class="btn btn-primary" id="nextQuestion">Next question <span>→</span></button></div>
+          <p class="keyboard-hint">TIP: USE 1–4 TO SELECT · ← → TO NAVIGATE</p>
+        </div>
+        <aside class="quiz-aside"><div class="timer-card"><span class="aside-label">TIME REMAINING</span><div class="timer-ring" id="timerRing"><strong id="timerValue">20</strong><small>SEC</small></div><span id="timerStatus">STAY FOCUSED</span></div><div class="question-map"><div class="aside-label">QUESTION MAP</div><div id="questionDots" class="question-dots"></div><div class="map-legend"><span><i class="legend-current"></i> CURRENT</span><span><i class="legend-answered"></i> ANSWERED</span></div></div><div class="aside-quote">“The secret of getting ahead is getting started.”<small>— MARK TWAIN</small></div></aside>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen wrap">
+      <div class="result-heading"><div class="eyebrow">CHALLENGE COMPLETE · <span id="resultCategory">HTML</span></div><h1>That's a <span>wrap.</span></h1><p id="performanceMessage">Every challenge makes you sharper.</p></div>
+      <div class="result-grid">
+        <div class="score-card"><div class="score-ring" id="scoreRing"><div><strong id="scorePercent">0%</strong><small>ACCURACY</small></div></div><div class="score-caption">YOUR FINAL SCORE</div><strong class="score-big" id="scoreFraction">0 <i>/ 10</i></strong></div>
+        <div class="result-details"><div class="result-stat"><span><i class="stat-dot correct-dot"></i> Correct answers</span><strong id="correctCount">0</strong></div><div class="result-stat"><span><i class="stat-dot wrong-dot"></i> Incorrect answers</span><strong id="incorrectCount">0</strong></div><div class="result-stat"><span><i class="stat-dot unanswered-dot"></i> Unanswered</span><strong id="unansweredCount">0</strong></div><div class="result-stat"><span>Time taken</span><strong id="timeTaken">00:00</strong></div><div class="result-actions"><button class="btn btn-primary" id="playAgain">Play again ↗</button><button class="btn btn-outline" id="reviewAnswers">Review answers</button><button class="btn btn-quiet" data-home>Back to home</button></div></div>
+      </div>
+      <div class="result-bottom"><span>YOUR PROGRESS IS SAVED LOCALLY</span><span id="bestScoreLabel">PERSONAL BEST: —</span></div>
+    </section>
+
+    <section id="reviewScreen" class="screen wrap">
+      <div class="review-head"><button class="back-link" data-results>← Back to results</button><div class="eyebrow">CHALLENGE BREAKDOWN</div><h1>Review your <span>answers.</span></h1><p>Understand every answer. That's how progress happens.</p></div>
+      <div id="reviewList" class="review-list"></div>
+      <div class="review-footer"><button class="btn btn-primary" data-home>Back to home ↗</button></div>
+    </section>
+
+    <section id="leaderboardScreen" class="screen wrap">
+      <div class="page-heading"><div class="eyebrow">YOUR PERSONAL RECORD</div><h1>Keep the <span>score.</span></h1><p>Your best performances on this device, saved privately in your browser.</p></div>
+      <div class="table-wrap"><table><thead><tr><th>RANK</th><th>CHALLENGE</th><th>DIFFICULTY</th><th>SCORE</th><th>DATE</th></tr></thead><tbody id="historyBody"></tbody></table><div id="emptyHistory" class="empty-state">No challenges completed yet. Your first record is waiting.</div></div>
+      <div class="selection-foot"><span>LOCAL DEVICE HISTORY</span><button class="text-link" id="clearHistory">Clear history ×</button></div>
+    </section>
+
+    <section id="aboutScreen" class="screen wrap">
+      <div class="page-heading"><div class="eyebrow">THE MINDSET</div><h1>Built for the <span>curious.</span></h1><p>CodeQuiz.exe is a focused space to test what you know, discover what you don't, and keep moving forward.</p></div>
+      <div class="about-panel"><div class="about-mark">&lt;/&gt;</div><div><div class="eyebrow">NO BACKEND. NO NOISE.</div><h2>Your learning.<br>Your pace. Your progress.</h2><p>Choose from seven programming domains and three levels of difficulty. Each challenge is timed, every answer is reviewable, and your personal bests stay in your browser using LocalStorage.</p><p class="about-tech">HTML5 <i>·</i> CSS3 <i>·</i> VANILLA JAVASCRIPT <i>·</i> LOCALSTORAGE</p></div></div>
+    </section>
+  </main>
+  <footer class="footer"><a class="brand" href="#" data-home><span class="brand-mark">&lt;/&gt;</span> CODEQUIZ<span class="brand-ext">.exe</span></a><span>THINK CLEAR. CODE BETTER.</span><span>© 2026 CODEQUIZ</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="questions.js"></script><script src="script.js"></script>
+</body></html>
